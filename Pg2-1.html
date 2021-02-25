@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <script>
+
+  tClick = "Do"
+  sDoClick = 0
+  sReClick = 0
+  sMiClick = 0
+  sFaClick = 0
+  sSoClick = 0
+  sLaClick = 0
+  sTiClick = 0
+
+  function sClicky() {
+
+//So here's the issue: if I keep them as individual if statements, it displays well for the teacher
+//However, if I make them "else if" statements, then it isn't ordered and a student can see the changes
+
+    if (sDoClick >= 1){
+      sClick = "Do";
+      document.getElementById("tDisplayD").innerHTML = (sDoClick + " student(s) chose "+ sClick);
+    }
+    if (sReClick >= 1) {
+      sClick = "Re";
+      document.getElementById("tDisplayR").innerHTML = (sReClick + " student(s) chose "+ sClick);
+    }
+    if (sMiClick >= 1) {
+      sClick = "Mi";
+      document.getElementById("tDisplayM").innerHTML = (sMiClick + " student(s) chose "+ sClick);
+    }
+    if (sFaClick >= 1) {
+      sClick = "Fa";
+      document.getElementById("tDisplayF").innerHTML = (sFaClick + " student(s) chose "+ sClick);
+    }
+    if (sSoClick >= 1) {
+      sClick = "So";
+      document.getElementById("tDisplayS").innerHTML = (sSoClick + " student(s) chose "+ sClick);
+    }
+    if (sLaClick >= 1) {
+      sClick = "La";
+      document.getElementById("tDisplayL").innerHTML = (sLaClick + " student(s) chose "+ sClick);
+    }
+    if (sTiClick >= 1) {
+      sClick = "Ti";
+      document.getElementById("tDisplayT").innerHTML = (sTiClick + " student(s) chose "+ sClick);
+    }
+
+    document.getElementById("sPg2").innerHTML = ("You have chosen " + sClick);
+
+  }
+
+
+
+  /*
+  function sReClick() {
+    document.getElementById("sPg2").innerHTML = "You have chosen Re";
+    sClick = "Re";
+    //checkAnswer();
+    document.getElementById("tDisplay").innerHTML = " student(s) chose Re";
+  }
+  function sMiClick() {
+    document.getElementById("sPg2").innerHTML = "You have chosen Mi";
+    sClick = "Mi";
+    //checkAnswer();
+    document.getElementById("tDisplay").innerHTML = " student(s) chose Mi";
+  }
+  function sFaClick() {
+    document.getElementById("sPg2").innerHTML = "You have chosen Fa";
+    sClick = "Fa";
+    //checkAnswer();
+    document.getElementById("tDisplay").innerHTML = " student(s) chose Fa";
+  }
+  function sSoClick() {
+    document.getElementById("sPg2").innerHTML = "You have chosen So";
+    sClick = "So";
+    //checkAnswer();
+    document.getElementById("tDisplay").innerHTML = " student(s) chose So";
+  }
+  function sLaClick() {
+    document.getElementById("sPg2").innerHTML = "You have chosen La";
+    sClick = "La";
+    //checkAnswer();
+    document.getElementById("tDisplay").innerHTML = " student(s) chose La";
+  }
+  function sTiClick() {
+    document.getElementById("sPg2").innerHTML = "You have chosen Ti";
+    sClick = "Ti";
+    //checkAnswer();
+    document.getElementById("tDisplay").innerHTML = " student(s) chose Ti";
+  }
+  */
+
+  /*function checkAnswer(){
+    if (tClick == sClick){
+      return tClick;
+    }
+    else {
+      document.getElementById("tDisplay").innerHTML = numT " student(s) chose Ti";
+    }
+  }*/
+
+  //function speakerClick() {
+  //var x = document.getElementById("myAudio");
+
+
+  function playClick() {
+    document.getElementById("student").innerHTML = "A sound has been played";
+  }
+
+  </script>
+
+
+</head>
+
+<!--Adds in the green borders for the text
+These also change with increased or decreased text size -->
+<style>
+
+div {
+  width: 500px;
+  border: 5px solid green;
+  padding: 10px;
+  margin: 10px;
+}
+</style>
+
+<audio id="music">
+<source src="bensound-ukulele.mp3" type="audio/mp3">
+Your browser does not support the audio element.
+</audio>
+
+<audio id="music2">
+<source src="bensound-creativeminds.mp3" type="audio/mp3">
+Your browser does not support the audio element.
+</audio>
+
+<audio id="music3">
+<source src="Only_in_Sleep___Alto_1_Predominant___Eriks_Esenvalds.mp3" type="audio/mp3">
+Your browser does not support the audio element.
+</audio>
+
+<body>
+
+  <h1>The Music App</h1>
+
+  <!--Teacher Display-->
+  <div class="boxed">
+    You are a teacher
+    <p id="tDisplay"> Waiting for student response</p>
+    <p id="tDisplayD"> Do</p>
+    <p id="tDisplayR"> Re</p>
+    <p id="tDisplayM"> Mi</p>
+    <p id="tDisplayF"> Fa</p>
+    <p id="tDisplayS"> So</p>
+    <p id="tDisplayL"> La</p>
+    <p id="tDisplayT"> Ti</p>
+  </div>
+  <br>
+
+  <!--Student Display-->
+  <div class="boxer">
+    You are a student
+    <br>
+    <p id="student">Click the button below to play the note</p>
+    <img src="speaker-icon.png" alt="Speaker" width="100" height="100">
+    <br>
+
+
+    <p>Click the buttons to play or pause the music.</p>
+
+    <button onclick="playClick()" type="button">PlayTest</button>
+
+    <button onclick="play()" type="button">Play</button>
+
+    <button onclick="play2()" type="button">Play2</button>
+    <button onclick="pause2()" type="button">Pause2</button>
+
+    <button onclick="play3()" type="button">Play3</button>
+    <button onclick="pause3()" type="button">Pause3</button>
+
+    <script>
+
+    var myMusic= document.getElementById("music");
+
+    function play() {
+    myMusic.play();
+    }
+
+    function pause() {
+    myMusic.pause();
+    }
+
+    </script>
+
+
+    <p>Please choose the proper solfege for this note in the key of C</p>
+    <p id="sPg2">_</p>
+
+    <button type="button" onclick="sDoClick = sDoClick+1, sClicky()">Do</button>
+    <button type="button" onclick="sReClick = sReClick+1, sClicky()">Re</button>
+    <button type="button" onclick="sMiClick = sMiClick+1, sClicky()">Mi</button>
+    <button type="button" onclick="sFaClick = sFaClick+1, sClicky()">Fa</button>
+    <button type="button" onclick="sSoClick = sSoClick+1, sClicky()">So</button>
+    <button type="button" onclick="sLaClick = sLaClick+1, sClicky()">La</button>
+    <button type="button" onclick="sTiClick = sTiClick+1, sClicky()">Ti</button>
+
+  </div>
+
+<!-->
+  <audio autoplay>
+    <source src= "bensound-ukulele" type="audio/mp3">
+    Your browser does not support this audio tag
+  </audio>
+<!-->
+
+</body>
+
+</html>

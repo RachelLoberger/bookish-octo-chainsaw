@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+  //This whole thing is the logic for the D-T buttons being pressed
+  //It should output the result on both the student and teacher pages
+
+  function DoClick() {
+    document.getElementById("tPg1").innerHTML = "You have chosen Do";
+    tClick = "Do";
+    document.getElementById("sPg").innerHTML = "Your teacher has selected a note";
+    document.getElementById("sPg1").innerHTML = "Select C";
+  }
+
+  function ReClick() {
+    document.getElementById("tPg1").innerHTML = "You have chosen Re";
+    tClick = "Re";
+    document.getElementById("sPg").innerHTML = "Your teacher has selected a note";
+    document.getElementById("sPg1").innerHTML = "Select D";
+  }
+
+  function MiClick() {
+    document.getElementById("tPg1").innerHTML = "You have chosen Mi";
+    tClick = "Mi";
+    document.getElementById("sPg").innerHTML = "Your teacher has selected a note";
+    document.getElementById("sPg1").innerHTML = "Select E";
+  }
+
+  function FaClick() {
+    document.getElementById("tPg1").innerHTML = "You have chosen Fa";
+    tClick = "Fa";
+    document.getElementById("sPg").innerHTML = "Your teacher has selected a note";
+    document.getElementById("sPg1").innerHTML = "Select F";
+  }
+
+  function SoClick() {
+    document.getElementById("tPg1").innerHTML = "You have chosen So";
+    tClick = "So";
+    document.getElementById("sPg").innerHTML = "Your teacher has selected a note";
+    document.getElementById("sPg1").innerHTML = "Select G";
+  }
+
+  function LaClick() {
+    document.getElementById("tPg1").innerHTML = "You have chosen La";
+    tClick = "La";
+    document.getElementById("sPg").innerHTML = "Your teacher has selected a note";
+    document.getElementById("sPg1").innerHTML = "Select A";
+  }
+
+  function TiClick() {
+    document.getElementById("tPg1").innerHTML = "You have chosen Ti";
+    tClick = "Ti";
+    document.getElementById("sPg").innerHTML = "Your teacher has selected a note";
+    document.getElementById("sPg1").innerHTML = "Select B";
+  }
+
+  </script>
+
+<!-- <img src="speaker-icon.png" alt="Speaker" width="100" height="100"> -->
+
+</head>
+
+<!--Adds in the green borders for the text
+These also change with increased or decreased text size -->
+<style>
+
+div {
+  width: 500px;
+  border: 5px solid green;
+  padding: 100px;
+  margin: 10px;
+}
+</style>
+
+<body>
+
+<h1>The Music App</h1>
+
+<!--Teacher Display-->
+<div class="boxed">
+  You are a teacher
+  <br>
+  <br>
+  <p id="tPg1">Please choose a note in the key of C</p>
+
+  <button type="button" onclick="DoClick()">Do</button>
+  <button type="button" onclick="ReClick()">Re</button>
+  <button type="button" onclick="MiClick()">Mi</button>
+  <button type="button" onclick="FaClick()">Fa</button>
+  <button type="button" onclick="SoClick()">So</button>
+  <button type="button" onclick="LaClick()">La</button>
+  <button type="button" onclick="TiClick()">Ti</button>
+
+</div>
+<br>
+
+<!--Student Display-->
+<div class="boxer">
+  You are a student
+  <br>
+  <br>
+  <p id="sPg"> </p>
+  <p id="sPg1">Waiting for a note</p>
+
+</div>
+
+</body>
+
+</html>
